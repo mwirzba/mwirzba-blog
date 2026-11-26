@@ -3,8 +3,12 @@ title = "O mnie"
 draft = false
 +++
 
-Cześć! Jestem Mateusz Wirzba — senior software developer z ponad 6-letnim doświadczeniem
-w tworzeniu wydajnych i skalowalnych aplikacji.
+{{< about-profile
+  image="/images/mateusz-wirzba.png"
+  alt="Mateusz Wirzba"
+  eyebrow="Cześć, jestem Mateusz"
+  text="Senior software developer z ponad 6-letnim doświadczeniem w tworzeniu wydajnych i skalowalnych aplikacji."
+>}}
 
 ## Specjalizacja
 
@@ -81,9 +85,12 @@ Wykształcenie to magister i licencjat informatyki uzyskane na Uniwersytecie Gda
 
 ## Poza kodem
 
-Interesuję się sztuczną inteligencją i narzędziami wspierającymi programistów. W pracy cenię sobie
-dobrą współpracę, dzielenie się wiedzą oraz tworzenie prostych, czytelnych i utrzymywalnych
-rozwiązań.
+Poza światem kodu lubię utrzymywać równowagę między technologią a aktywnym trybem życia.
+Bieganie pozwala mi oczyścić głowę i przełamywać własne ograniczenia, a trening siłowy
+uczciwie pokazuje, że regularność i cierpliwość przynoszą najlepsze efekty.
+
+W czasie wolnym odpoczywam również przy grach komputerowych — lubię świat, w którym można
+poznać nową historię, stawiać sobie ambitne cele i rozwijać umiejętność współpracy zespołowej.
 
 ## Kontakt
 

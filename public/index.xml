@@ -2,18 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Mój blog programistyczny</title>
-    <link>http://localhost:1313/mwirzba-blog/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Mój blog programistyczny</description>
     <generator>Hugo</generator>
     <language>pl</language>
     <lastBuildDate>Wed, 25 Nov 2026 11:51:20 +0100</lastBuildDate>
-    <atom:link href="http://localhost:1313/mwirzba-blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pierwszy Post</title>
-      <link>http://localhost:1313/mwirzba-blog/posts/pierwszy-post/</link>
+      <link>http://localhost:1313/posts/pierwszy-post/</link>
       <pubDate>Wed, 25 Nov 2026 11:51:20 +0100</pubDate>
-      <guid>http://localhost:1313/mwirzba-blog/posts/pierwszy-post/</guid>
+      <guid>http://localhost:1313/posts/pierwszy-post/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>O mnie</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;Cześć! Jestem Mateusz Wirzba — senior software developer z ponad 6-letnim doświadczeniem
+w tworzeniu wydajnych i skalowalnych aplikacji.&lt;/p&gt;
+&lt;h2 id=&#34;specjalizacja&#34;&gt;Specjalizacja&lt;/h2&gt;
+&lt;p&gt;Specjalizuję się przede wszystkim w backendzie i ekosystemie C#/.NET. Buduję aplikacje oparte
+na mikroserwisach oraz architektury mikro-modularne, korzystając z podejść Domain-Driven Design,
+CQRS i Modular Monolith. Codziennie pracuję nad utrzymywalnym kodem, wydajnością i niezawodnością
+systemów opartych na Entity Framework oraz innych rozwiązaniach dostępu do danych.&lt;/p&gt;
+&lt;p&gt;Mam również doświadczenie we frontendzie — React, Angular, JavaScript i TypeScript. Pozwala mi to
+dobrze rozumieć przepływ danych i integracje pomiędzy warstwą użytkownika a usługami backendowymi.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

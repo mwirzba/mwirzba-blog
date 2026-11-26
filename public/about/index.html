@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>O mnie | Mój blog programistyczny</title>
+<meta name="keywords" content="">
+<meta name="description" content="Cześć! Jestem Mateusz Wirzba — senior software developer z ponad 6-letnim doświadczeniem
+w tworzeniu wydajnych i skalowalnych aplikacji.
+Specjalizacja
+Specjalizuję się przede wszystkim w backendzie i ekosystemie C#/.NET. Buduję aplikacje oparte
+na mikroserwisach oraz architektury mikro-modularne, korzystając z podejść Domain-Driven Design,
+CQRS i Modular Monolith. Codziennie pracuję nad utrzymywalnym kodem, wydajnością i niezawodnością
+systemów opartych na Entity Framework oraz innych rozwiązaniach dostępu do danych.
+Mam również doświadczenie we frontendzie — React, Angular, JavaScript i TypeScript. Pozwala mi to
+dobrze rozumieć przepływ danych i integracje pomiędzy warstwą użytkownika a usługami backendowymi.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/about/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.8cd603be27c8a648a6af6803fcf0c34555b7518a56ae6e700bc4c4f8e7935bf7.css" integrity="sha256-jNYDvifIpkimr2gD/PDDRVW3UYpWrm5wC8TE&#43;OeTW/c=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/about/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Mój blog programistyczny (Alt + H)">Mój blog programistyczny</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posty">
+                    <span>Posty</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tagi">
+                    <span>Tagi</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/about/" title="O mnie">
+                    <span class="active">O mnie</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      O mnie
+    </h1>
+    <div class="post-meta">
+
+<span>2 min</span>
+
+</div>
+  </header> <details class="toc" >
+    <summary accesskey="c" title="(Alt + C)">
+        <span class="title">Spis treści</span>
+    </summary>
+
+    <div class="inner"><ul>
+            <li>
+                <a href="#specjalizacja" aria-label="Specjalizacja">Specjalizacja</a></li>
+            <li>
+                <a href="#technologie-i-obszary" aria-label="Technologie i obszary">Technologie i obszary</a></li>
+            <li>
+                <a href="#do%c5%9bwiadczenie" aria-label="Doświadczenie">Doświadczenie</a><ul>
+                    
+            <li>
+                <a href="#" aria-label="Senior Software Developer · Future Processing">Senior Software Developer · Future Processing</a></li>
+            <li>
+                <a href="#" aria-label=".NET Developer · Diagnostyka">.NET Developer · Diagnostyka</a></li>
+            <li>
+                <a href="#" aria-label=".NET Developer · Omero sp. z o.o.">.NET Developer · Omero sp. z o.o.</a></li>
+            <li>
+                <a href="#" aria-label=".NET Intern · UTC Fire &amp; Security">.NET Intern · UTC Fire &amp; Security</a></li></ul>
+            </li>
+            <li>
+                <a href="#poza-kodem" aria-label="Poza kodem">Poza kodem</a></li>
+            <li>
+                <a href="#kontakt" aria-label="Kontakt">Kontakt</a>
+            </li>
+        </ul>
+    </div>
+</details>
+
+  <div class="post-content md-content"><p>Cześć! Jestem Mateusz Wirzba — senior software developer z ponad 6-letnim doświadczeniem
+w tworzeniu wydajnych i skalowalnych aplikacji.</p>
+<h2 id="specjalizacja">Specjalizacja<a hidden class="anchor" aria-hidden="true" href="#specjalizacja">#</a></h2>
+<p>Specjalizuję się przede wszystkim w backendzie i ekosystemie C#/.NET. Buduję aplikacje oparte
+na mikroserwisach oraz architektury mikro-modularne, korzystając z podejść Domain-Driven Design,
+CQRS i Modular Monolith. Codziennie pracuję nad utrzymywalnym kodem, wydajnością i niezawodnością
+systemów opartych na Entity Framework oraz innych rozwiązaniach dostępu do danych.</p>
+<p>Mam również doświadczenie we frontendzie — React, Angular, JavaScript i TypeScript. Pozwala mi to
+dobrze rozumieć przepływ danych i integracje pomiędzy warstwą użytkownika a usługami backendowymi.</p>
+<h2 id="technologie-i-obszary">Technologie i obszary<a hidden class="anchor" aria-hidden="true" href="#technologie-i-obszary">#</a></h2>
+<ul>
+<li>C#, .NET, Entity Framework i Dapper</li>
+<li>Microservices, DDD, CQRS i Modular Monolith</li>
+<li>Apache Kafka, RabbitMQ i Azure Service Bus</li>
+<li>PostgreSQL, Microsoft SQL Server i Oracle</li>
+<li>NUnit, xUnit, Moq i Pact</li>
+<li>Microsoft Azure, Docker i CI/CD</li>
+<li>Azure DevOps, Git, JIRA, Confluence i praktyki Agile/Scrum</li>
+</ul>
+<h2 id="doświadczenie">Doświadczenie<a hidden class="anchor" aria-hidden="true" href="#doświadczenie">#</a></h2>
+
+
+<div class="experience-timeline" aria-label="Przebieg doświadczenia zawodowego">
+  <article class="timeline-item">
+    <div class="timeline-date">09.2025 – obecnie</div>
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h3>Senior Software Developer · Future Processing</h3>
+      <p>Realizuję usługi od fazy początkowej aż do wdrożenia produkcyjnego. Rozwijam rozwiązania
+      w oparciu o .NET, C#, mikroserwisy i modularny monolit, współpracując z zespołami
+      wykorzystującymi Angular, Azure, Docker, RabbitMQ i PostgreSQL.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-date">05.2023 – 09.2025</div>
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h3>.NET Developer · Diagnostyka</h3>
+      <p>Dostarczałem mikroserwisy od planowania do produkcji. Wprowadziłem testy kontraktowe,
+      zredukowałem liczbę problemów integracyjnych i zwiększyłem wydajność endpointów o 40%
+      przez optymalizację Entity Framework. Mentoringowałem nowych członków zespołu i
+      architektowałem zdarzenia Kafka dla dużych wolumenów danych.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-date">08.2020 – 04.2023</div>
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h3>.NET Developer · Omero sp. z o.o.</h3>
+      <p>Rozwijałem mikroserwisy i aplikacje React, projektowałem interfejsy według wymagań
+      klientów oraz tworzyłem wtyczkę WPF dla Trados Studio. Wprowadzenie testów jednostkowych
+      i modernizacja frontendu poprawiły wydajność aplikacji o 20%.</p>
+    </div>
+  </article>
+
+  <article class="timeline-item">
+    <div class="timeline-date">07.2019 – 09.2019</div>
+    <div class="timeline-marker"></div>
+    <div class="timeline-content">
+      <h3>.NET Intern · UTC Fire &amp; Security</h3>
+      <p>Wdrożyłem wzorzec programowania asynchronicznego, tworzyłem narzędzia usprawniające
+      testowanie oraz analizowałem i usuwałem błędy w aplikacjach WPF.</p>
+    </div>
+  </article>
+</div>
+
+<p>Wykształcenie to magister i licencjat informatyki uzyskane na Uniwersytecie Gdańskim.</p>
+<h2 id="poza-kodem">Poza kodem<a hidden class="anchor" aria-hidden="true" href="#poza-kodem">#</a></h2>
+<p>Interesuję się sztuczną inteligencją i narzędziami wspierającymi programistów. W pracy cenię sobie
+dobrą współpracę, dzielenie się wiedzą oraz tworzenie prostych, czytelnych i utrzymywalnych
+rozwiązań.</p>
+<h2 id="kontakt">Kontakt<a hidden class="anchor" aria-hidden="true" href="#kontakt">#</a></h2>
+<p>Napisz do mnie na <a href="https://www.linkedin.com/in/mateusz-wirzba/">LinkedIn</a>.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">Mój blog programistyczny</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        
+        let menuScrollTimeout;
+        menu.addEventListener("scroll", function () {
+            clearTimeout(menuScrollTimeout);
+            menuScrollTimeout = setTimeout(function () {
+                localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+            }, 150);
+        }, { passive: true });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            const target = document.querySelector(`[id='${decodeURIComponent(id)}']`);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                target.scrollIntoView();
+            }
+            
+            
+            if (target.tabIndex < 0 && !target.hasAttribute("tabindex")) {
+                target.setAttribute("tabindex", "-1");
+            }
+            target.focus({ preventScroll: true });
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    var scrollTicking = false;
+    
+    window.addEventListener("scroll", function () {
+        if (scrollTicking) {
+            return;
+        }
+        scrollTicking = true;
+        requestAnimationFrame(function () {
+            const scrollThreshold = window.innerHeight;
+            const shown = document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold;
+            toplink.classList.toggle("hidden", !shown);
+            scrollTicking = false;
+        });
+    }, { passive: true });
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'Kopiuj';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'Skopiowano!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'Kopiuj';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

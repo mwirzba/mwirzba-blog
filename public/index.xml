@@ -20,8 +20,14 @@
       <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;Cześć! Jestem Mateusz Wirzba — senior software developer z ponad 6-letnim doświadczeniem
-w tworzeniu wydajnych i skalowalnych aplikacji.&lt;/p&gt;
+      <description>&lt;section class=&#34;about-profile&#34;&gt;
+  &lt;img class=&#34;about-profile-photo&#34; src=&#34;http://localhost:1313/images/mateusz-wirzba.png&#34; alt=&#34;Mateusz Wirzba&#34;&gt;
+  &lt;div class=&#34;about-profile-content&#34;&gt;
+    &lt;p class=&#34;about-profile-eyebrow&#34;&gt;Cześć, jestem Mateusz&lt;/p&gt;
+    &lt;p&gt;Senior software developer z ponad 6-letnim doświadczeniem w tworzeniu wydajnych i skalowalnych aplikacji.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;
+
 &lt;h2 id=&#34;specjalizacja&#34;&gt;Specjalizacja&lt;/h2&gt;
 &lt;p&gt;Specjalizuję się przede wszystkim w backendzie i ekosystemie C#/.NET. Buduję aplikacje oparte
 na mikroserwisach oraz architektury mikro-modularne, korzystając z podejść Domain-Driven Design,

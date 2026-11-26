@@ -4,7 +4,7 @@ draft = false
 +++
 
 {{< about-profile
-  image="/images/mateusz-wirzba.png"
+  image="images/mateusz-wirzba.png"
   alt="Mateusz Wirzba"
   eyebrow="Cześć, jestem Mateusz"
   text="Senior software developer z ponad 6-letnim doświadczeniem w tworzeniu wydajnych i skalowalnych aplikacji."

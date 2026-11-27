@@ -1,4 +1,6 @@
-# Co nowego w C# 15?
++++
+title = 'Co nowego w C# 15'
++++
 
 ## Wprowadzenie
 

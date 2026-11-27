@@ -54,16 +54,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 430px;
+  min-height: 380px;
   margin: 1.5rem 0 2.5rem;
-  padding: 3.5rem clamp(1.5rem, 6vw, 4.5rem);
-  border: 0;
+  padding: 3rem clamp(1.5rem, 6vw, 4.5rem);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
-  background:
-    radial-gradient(circle at 50% 18%, rgba(59, 130, 246, 0.09), transparent 24rem),
-    #0d1c3b;
-  box-shadow: 0 1.25rem 3rem rgba(10, 25, 56, 0.14);
-  color: #fff;
+  background: var(--entry);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.08);
+  color: var(--primary);
   text-align: center;
 }
 
@@ -95,8 +93,8 @@ body:has(.about-profile) .post-header {
 
 .about-profile-eyebrow {
   margin-bottom: 1.25rem !important;
-  color: #4f83ff;
-  font-size: 0.9rem;
+  color: var(--secondary);
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -104,21 +102,21 @@ body:has(.about-profile) .post-header {
 
 .about-profile-content h1 {
   max-width: 950px;
-  font-size: clamp(2.25rem, 5vw, 4.25rem);
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.9rem, 4vw, 3.25rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
 }
 
 .about-profile-description {
   margin-top: 1.25rem !important;
-  color: #bac8df;
-  font-size: 1.05rem;
+  color: var(--secondary);
+  font-size: 1rem;
   line-height: 1.6;
 }
 
 @media (max-width: 640px) {
   .about-profile {
-    min-height: 390px;
+    min-height: 340px;
     padding: 2.5rem 1.25rem;
   }
 

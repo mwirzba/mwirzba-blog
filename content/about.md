@@ -1,6 +1,7 @@
 +++
 title = "O mnie"
 draft = false
+ShowToc = false
 +++
 
 {{< about-profile

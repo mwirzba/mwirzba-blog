@@ -2,6 +2,7 @@
   <img class="about-profile-photo" src="{{ .Get "image" | relURL }}" alt="{{ .Get "alt" }}">
   <div class="about-profile-content">
     <p class="about-profile-eyebrow">{{ .Get "eyebrow" }}</p>
-    <p>{{ .Get "text" | markdownify }}</p>
+    <h1>{{ .Get "title" }}</h1>
+    {{ with .Get "text" }}<p class="about-profile-description">{{ . | markdownify }}</p>{{ end }}
   </div>
 </section>

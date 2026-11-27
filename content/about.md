@@ -6,8 +6,9 @@ draft = false
 {{< about-profile
   image="images/mateusz-wirzba.png"
   alt="Mateusz Wirzba"
-  eyebrow="Cześć, jestem Mateusz"
-  text="Senior software developer z ponad 6-letnim doświadczeniem w tworzeniu wydajnych i skalowalnych aplikacji."
+  eyebrow="O mnie"
+  title="Cześć, jestem Mateusz. Pomagam tworzyć trwałe i skalowalne rozwiązania w C# i .NET."
+  text="Senior software developer z ponad 6-letnim doświadczeniem w backendzie i architekturze aplikacji."
 >}}
 
 ## Specjalizacja

@@ -177,6 +177,156 @@ string team = rota[DayOfWeek.Monday, 1];
 
 Więcej informacji o extension indexers: [dokumentacja Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/extension#extension-indexers).
 
+## 5. Etykietowane `break` i `continue`
+
+Etykietowane `break` i `continue` (labeled break and continue) w C# 15 pozwalają nadać etykietę zewnętrznej pętli lub instrukcji `switch`, a następnie odwołać się do niej bezpośrednio z zagnieżdżonego bloku. Dzięki temu nie trzeba tworzyć pomocniczych flag typu `bool`, używać kontrowersyjnego `goto` ani wydzielać sztucznych metod lokalnych.
+
+### Przed C# 15 (do C# 14)
+
+Aby przerwać zewnętrzną pętlę z wnętrza zagnieżdżonej pętli albo wyjść z pętli z wnętrza instrukcji `switch`, trzeba było użyć flagi logicznej sprawdzanej na każdym poziomie lub instrukcji `goto`:
+
+```csharp
+// Sposób 1: pomocnicza flaga bool
+bool found = false;
+for (int row = 0; row < grid.Height && !found; row++)
+{
+    for (int col = 0; col < grid.Width; col++)
+    {
+        if (grid[row, col].IsBlocked)
+        {
+            // Aby przejść do kolejnego wiersza, trzeba było użyć break dla wewnętrznej pętli
+            break;
+        }
+
+        if (grid[row, col].IsGoal)
+        {
+            found = true;
+            break;
+        }
+    }
+}
+
+// Sposób 2: instrukcja goto z etykietą za pętlą
+for (int row = 0; row < grid.Height; row++)
+{
+    for (int col = 0; col < grid.Width; col++)
+    {
+        if (grid[row, col].IsBlocked) goto NextRow;
+        if (grid[row, col].IsGoal) goto EndSearch;
+    }
+
+    NextRow: ;
+}
+EndSearch: ;
+```
+
+### Po wprowadzeniu C# 15
+
+Etykietę umieszcza się bezpośrednio przed zewnętrzną pętlą (`outer:`). W jej wnętrzu można użyć `break outer;` lub `continue outer;`:
+
+```csharp
+outer: for (int row = 0; row < grid.Height; row++)
+{
+    for (int col = 0; col < grid.Width; col++)
+    {
+        if (grid[row, col].IsBlocked)
+        {
+            // Pomija pozostałe kolumny i przechodzi do kolejnego wiersza
+            continue outer;
+        }
+
+        if (grid[row, col].IsGoal)
+        {
+            // Przerywa pętlę 'outer' i wychodzi z obu pętli
+            break outer;
+        }
+    }
+}
+```
+
+### Wyjście z pętli z wnętrza `switch`
+
+Etykiety rozwiązują też częsty problem z instrukcją `switch` umieszczoną wewnątrz pętli. Zwykłe `break` kończy wtedy tylko działanie `switch`, a nie całej pętli:
+
+```csharp
+commandLoop: foreach (var command in commands)
+{
+    switch (command)
+    {
+        case "skip":
+            continue commandLoop; // Przechodzi do następnej komendy
+        case "exit":
+            break commandLoop; // Przerywa całą pętlę foreach
+    }
+}
+```
+
+Więcej informacji: [dokumentacja Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/statements/jump-statements).
+
+## 6. Statyczne składowe interfejsów w starszych środowiskach uruchomieniowych
+
+C# 15 pozwala definiować niewirtualne statyczne składowe interfejsów także na starszych platformach (sprzed .NET Core 3.0). Może się to przydać w starszych projektach.
+
+```csharp
+public interface IMeasurement
+{
+    public static double ToMeters(double centimeters) => centimeters / 100;
+}
+```
+
+Więcej informacji: [dokumentacja Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface#static-interface-members-and-runtime-support).
+
+## 7. Bezpieczeństwo pamięci (memory safety)
+
+Wisienką na torcie są tematy związane z zarządzaniem pamięcią i jej bezpieczeństwem. Sam nie korzystałem z takich funkcjonalności w projektach komercyjnych, przy których pracowałem, ale zostawiam je tutaj jako ciekawostkę.
+
+Ulepszenia bezpieczeństwa pamięci w C# 15 to funkcja w wersji preview, która rozpoczyna wieloletnią przebudowę słowa kluczowego `unsafe`. Jej celem jest powiązanie `unsafe` z faktycznym odczytem i zapisem niezarządzanej pamięci, gdzie mogą powstawać błędy bezpieczeństwa, a nie z samym używaniem typów wskaźnikowych. Zmiana ma też przekształcić `unsafe` w jawny kontrakt z wywołującym (caller).
+
+### Co zmienia się w porównaniu z wcześniejszymi wersjami C#?
+
+### 1. Rozdzielenie tworzenia wskaźnika od jego użycia
+
+- **Przed C# 15:** samo zadeklarowanie wskaźnika (`int* p`), pobranie adresu (`&x`), użycie `fixed` lub `sizeof` wymagało bloku `unsafe`. Przez to całe duże metody stawały się `unsafe` i trudne do audytu.
+- **W C# 15:** samo utworzenie lub przekazanie wskaźnika nie jest niebezpieczne. Ryzyko pojawia się dopiero przy jego dereferencji (odczycie lub zapisie pod adresem). Blok `unsafe` jest wymagany tylko tam, gdzie faktycznie korzysta się z pamięci:
+
+```csharp
+// W nowym modelu (preview) tworzenie wskaźnika i pinning nie wymagają bloku unsafe:
+int number = 42;
+int* ptr = &number;
+
+int[] buffer = [10, 20, 30];
+fixed (int* first = buffer)
+{
+    // Dopiero faktyczny odczyt lub zapis wymaga bloku unsafe
+    // (łatwego do znalezienia podczas audytu)
+    int val = unsafe(*first); // Nowe wyrażenie unsafe(...) dla pojedynczej instrukcji
+}
+```
+
+### 2. `unsafe` jako kontrakt z wywołującym (`requires-unsafe`)
+
+- **Przed C# 15:** dodanie `unsafe` do sygnatury metody oznaczało tylko, że można w niej używać wskaźników. Nie nakładało to żadnych wymagań na kod wywołujący, jeśli w sygnaturze nie było `*` (np. przy przekazywaniu adresu jako `nint` lub `Span<T>`).
+- **W C# 15:** oznaczenie metody słowem `unsafe` nadaje jej status `requires-unsafe`. Oznacza to, że metoda ma niebezpieczne założenia wstępne, a jej wywołanie wymaga bloku `unsafe`. Dzięki temu można śledzić ryzyko w całym projekcie, podobnie jak w języku Rust. Samo słowo `unsafe` w sygnaturze nie czyni już automatycznie całego ciała metody niebezpiecznym — ryzykowne operacje nadal trzeba jawnie umieścić w bloku `unsafe { ... }`.
+
+### 3. Nowe konstrukcje składniowe
+
+- **Wyrażenie `unsafe(wyrażenie)`:** pozwala oznaczyć jako niebezpieczne pojedyncze wyrażenie, np. w inicjalizatorach pól, konstruktorów lub filtrach `catch`, gdzie nie da się użyć klasycznego bloku `{ ... }`.
+- **Kontekstowe słowo kluczowe `safe`:** w nowym modelu zewnętrzne funkcje natywne (`extern`) oraz pola w strukturach o jawnym układzie pamięci (`[StructLayout(LayoutKind.Explicit)]`) są domyślnie traktowane jako niebezpieczne. Słowo `safe` pozwala jawnie potwierdzić, że dana deklaracja przeszła audyt i jest bezpieczna dla wywołującego.
+
+### Jak włączyć tę funkcję (tylko do testów — wersja preview)
+
+To funkcja eksperymentalna, planowana do pełnego wdrożenia w C# 16 / .NET 12. Aby ją przetestować, trzeba ją jawnie włączyć w pliku `.csproj`:
+
+```xml
+<PropertyGroup>
+    <LangVersion>preview</LangVersion>
+    <Features>$(Features);updated-memory-safety-rules</Features>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+</PropertyGroup>
+```
+
+Więcej informacji: [dokumentacja Microsoft](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code#the-updated-memory-safety-model-preview).
+
 ## Dalsza lektura
 
 Więcej informacji na oficjalnym blogu Microsoftu: [Co nowego w C# 15](https://learn.microsoft.com/pl-pl/dotnet/csharp/whats-new/csharp-15).
